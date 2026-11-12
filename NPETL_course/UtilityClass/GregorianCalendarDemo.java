@@ -1,0 +1,26 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class GregorianCalendarDemo {
+    public static void main(String[] args){
+        String[] months ={ "Jan", "Feb", "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        //Create a gregorian calendar initialised with the current date and time
+        //Default locale and timezone
+        GregorianCalendar gcalendar = new GregorianCalendar();
+        int year = gcalendar.get(Calendar.YEAR);
+        //Display current time and date information
+        System.out.print("Date: ");
+        System.out.print(months[gcalendar.get(Calendar.MONTH)]);
+        System.out.println(" " + gcalendar.get(Calendar.YEAR));
+        System.out.print("Time: ");
+        System.out.print(gcalendar.get(Calendar.HOUR)+":");
+        System.out.print(gcalendar.get(Calendar.MINUTE)+":");
+        System.out.println(gcalendar.get(Calendar.SECOND));
+        //Test if the current year is a leap year
+        if(gcalendar.isLeapYear(year)){
+            System.out.println("The current year is a leap year");
+        }else{
+            System.out.println("The current year is not a leap year");
+        }
+    }
+}
